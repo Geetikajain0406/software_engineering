@@ -1,0 +1,29 @@
+Student        System        Course        Payment        Instructor
+  |              |              |              |              |
+  |--Login------>|              |              |              |
+  |              |--Validate--->|              |              |
+  |<--Access-----| [valid]      |              |              |
+  |<--Retry------| [invalid]    |              |              |
+  |              |              |              |              |
+  |--Browse----->|------------->|              |              |
+  |              |<--Course List|              |              |
+  |              |              |              |              |
+  |--Select----->|              |              |              |
+  |              |--Check Enroll-------------->|              |
+  |              |--Payment---->|              |              | [if required]
+  |              |<--Done-------|              |              |
+  |<--Enrolled---|              |              |              |
+  |              |              |              |              |
+  |--Watch------>|              |              |              |
+  |--Submit----->|              |              |              |
+  |              |------------->|              |------------->|
+  |              |              |              |   Evaluate   |
+  |              |<-------------------------------------------|
+  |<--Feedback---| [valid]      |              |              |
+  |<--Resubmit---| [invalid]    |              |              |
+  |              |              |              |              |
+  |--Progress--->|              |              |              |
+  |<--Continue---| [not complete]             |              |
+  |<--Certificate| [complete]                 |              |
+  |              |              |              |              |
+  |             End Process                                  |
