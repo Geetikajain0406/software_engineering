@@ -1,0 +1,57 @@
+Here’s a **clear, exam-ready difference between CPM and PERT** 👇
+
+---
+
+## ✅ CPM vs PERT (Core Idea)
+
+* **CPM (Critical Path Method)** → used when time is **fixed / known**
+* **PERT (Program Evaluation Review Technique)** → used when time is **uncertain**
+
+---
+
+## ✅ Key Differences
+
+| Basis               | CPM                         | PERT                                                  |
+| ------------------- | --------------------------- | ----------------------------------------------------- |
+| Full Form           | Critical Path Method        | Program Evaluation Review Technique                   |
+| Nature              | Deterministic (fixed time)  | Probabilistic (uncertain time)                        |
+| Time Estimate       | Single time value           | Three estimates: optimistic, most likely, pessimistic |
+| Focus               | Time + Cost optimization    | Time (uncertainty handling)                           |
+| Type of Projects    | Construction, manufacturing | Research, development, new projects                   |
+| Complexity          | Simple                      | More complex                                          |
+| Probability Concept | Not used                    | Used                                                  |
+| Critical Path       | Fixed                       | May vary (based on estimates)                         |
+
+---
+
+## ✅ Important Formula (PERT only)
+
+T_e = \frac{O + 4M + P}{6}
+
+Where:
+
+* **O** = Optimistic time
+* **M** = Most likely time
+* **P** = Pessimistic time
+
+---
+
+## ✅ One-Line Difference (for quick writing)
+
+👉 **CPM = fixed time planning**
+👉 **PERT = uncertain time estimation using probability**
+
+---
+
+## ⚡ Exam Tip
+
+If 2-mark question:
+
+> “CPM uses fixed time estimates, while PERT uses probabilistic time estimates with three values.”
+
+If 5-mark:
+👉 Draw table + write formula = full marks 💯
+
+---
+
+If you want, I can also give you **real-life examples or trick to remember differences in 10 sec** 👍
