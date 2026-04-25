@@ -1,0 +1,99 @@
+You need a **State Diagram (Order lifecycle)** — not activity diagram. Focus on how the **order changes states** 👇
+
+---
+
+## ✅ Main States in the System
+
+* Browsing
+* Cart Created
+* Order Placed
+* Checking Availability
+* Confirmed / Rejected
+* Preparing
+* Out for Delivery
+* Delivered
+* Cancelled
+
+---
+
+## ✅ State Diagram (draw like this in exam)
+
+```id="h4k29d"
+[Start]
+   |
+Browsing
+   |
+Select Restaurant
+   |
+Add to Cart
+   |
+Order Placed
+   |
+Checking Availability
+   |----------------------|
+   |                      |
+Accepted               Rejected
+   |                      |
+Preparing            Notify User
+   |                      |
+Assigned Delivery     Cancelled
+   |
+Out for Delivery
+   |
+Delivered
+   |
+ [End]
+```
+
+---
+
+## ✅ With proper UML notation (important for marks)
+
+Use:
+
+* **Initial state** → ●
+* **Final state** → ◎
+* Arrows with conditions
+
+---
+
+### ✍️ Write this logic beside diagram:
+
+* After *Checking Availability*:
+
+  * **[accepted] → Preparing**
+  * **[rejected] → Cancelled**
+
+---
+
+## ✅ Cleaner UML-style version (you can replicate)
+
+```id="w93k2x"
+● → Browsing → Cart → Order Placed → Checking Availability
+
+Checking Availability → Preparing [accepted]
+Checking Availability → Cancelled [rejected]
+
+Preparing → Out for Delivery → Delivered → ◎
+```
+
+---
+
+## ✅ Important points examiner looks for
+
+* ✔ Correct states (not actions)
+* ✔ Decision branch (accept/reject)
+* ✔ Proper start & end
+* ✔ Flow clarity
+
+---
+
+## ⚡ Pro Tip
+
+Don’t write long sentences in diagram —
+👉 Keep **state names short (1–2 words)**
+👉 Use **conditions on arrows**
+
+---
+
+If you want, I can also convert this into a **perfect hand-drawn style diagram (exact exam format)** so you can directly copy it 👍
