@@ -1,0 +1,123 @@
+Achha ye line thodi confusing lagti hai, but main **bilkul simple Hinglish me clear karta hoon 👇**
+
+---
+
+# 🔹 “Closed Regions” kya hote hain?
+
+👉 Jab tum **flow graph draw karte ho**, to usme kuch **band areas (closed shapes)** bante hain.
+
+👉 Unhe hi bolte hain **closed regions**
+
+---
+
+## 🔥 Easy samajh:
+
+Socho diagram me:
+
+* Ek triangle bana
+* Ya ek loop se ek area band ho gaya
+
+👉 Wo ek **region** hai
+
+---
+
+# 🔹 Formula kya keh raha hai?
+
+```text id="4f5v4e"
+Cyclomatic Complexity = Regions + 1
+```
+
+---
+
+# 🔹 Example samjho
+
+Agar graph me:
+
+```text id="p9s4g4"
+Closed regions = 2
+```
+
+To:
+
+```text id="m3dyxk"
+V(G) = 2 + 1 = 3
+```
+
+---
+
+# 🔹 Ye “+1” kyun?
+
+👉 Kyunki:
+
+* Ek **outer region** bhi hota hai (bahar ka area)
+
+👉 Isliye:
+
+> total regions = inner regions + 1
+
+---
+
+# 🔹 Visual samajh (text se)
+
+```text id="6m2v1k"
+   ______
+  |      |
+  |  A   |
+  |______|
+
+   ______
+  |      |
+  |  B   |
+  |______|
+```
+
+👉 Yahan:
+
+* A = 1 region
+* B = 1 region
+
+Total inside = 2
+
+```text id="4o0x4g"
+V(G) = 2 + 1 = 3
+```
+
+---
+
+# 🔹 Important Point
+
+👉 Ye method tab use hota hai jab:
+
+* tumhare paas **flow graph diagram already ho**
+
+👉 Agar diagram nahi ho:
+➡️ better use:
+
+```text id="zkj3sv"
+V(G) = decision points + 1
+```
+
+---
+
+# 🔥 Final Simple Line (Exam ke liye)
+
+> Cyclomatic complexity can also be calculated as the number of closed regions in the control flow graph plus one.
+
+---
+
+# 🔥 Short Summary
+
+👉 Closed regions = graph ke andar ke band areas
+👉 Formula:
+
+```text id="zyiytj"
+V(G) = regions + 1
+```
+
+---
+
+Agar chaho main:
+✅ tumhe **graph me regions identify karna practice karwa du**
+✅ ya tumhara diya hua graph step-by-step solve karu
+
+bas bol 👍
