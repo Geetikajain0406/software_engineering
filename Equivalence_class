@@ -1,0 +1,149 @@
+Chalo isko simple aur exam-ready Hinglish mein step by step karte hain 👇
+
+---
+
+# ✅ (a) Equivalence Class Design
+
+Equivalence Class Partitioning ka matlab hota hai input ko groups (classes) mein divide karna — valid aur invalid.
+
+### 1. Age (18 to 60)
+
+* Valid Class:
+
+  * 18 ≤ age ≤ 60
+* Invalid Classes:
+
+  * age < 18
+  * age > 60
+
+👉 Classes:
+
+* EC1: age < 18 (Invalid)
+* EC2: 18–60 (Valid)
+* EC3: age > 60 (Invalid)
+
+---
+
+### 2. CGPA (0.0 to 10.0)
+
+* Valid:
+
+  * 0.0 ≤ CGPA ≤ 10.0
+* Invalid:
+
+  * CGPA < 0.0
+  * CGPA > 10.0
+
+👉 Classes:
+
+* EC4: CGPA < 0 (Invalid)
+* EC5: 0–10 (Valid)
+* EC6: CGPA > 10 (Invalid)
+
+---
+
+### 3. Credits (12 to 30)
+
+* Valid:
+
+  * 12 ≤ credits ≤ 30
+* Invalid:
+
+  * credits < 12
+  * credits > 30
+
+👉 Classes:
+
+* EC7: credits < 12 (Invalid)
+* EC8: 12–30 (Valid)
+* EC9: credits > 30 (Invalid)
+
+---
+
+### 4. Semester (1 to 8)
+
+* Valid:
+
+  * 1 ≤ semester ≤ 8
+* Invalid:
+
+  * semester < 1
+  * semester > 8
+
+👉 Classes:
+
+* EC10: semester < 1 (Invalid)
+* EC11: 1–8 (Valid)
+* EC12: semester > 8 (Invalid)
+
+---
+
+# ✅ (b) Test Cases (ECP based)
+
+Har test case mein ek valid aur ek invalid scenario cover karte hain:
+
+| Test Case | Age | CGPA | Credits | Semester | Expected Output           |
+| --------- | --- | ---- | ------- | -------- | ------------------------- |
+| TC1       | 20  | 8.5  | 20      | 3        | ✅ Registration Successful |
+| TC2       | 16  | 8.5  | 20      | 3        | ❌ Age invalid             |
+| TC3       | 65  | 8.5  | 20      | 3        | ❌ Age invalid             |
+| TC4       | 20  | -1   | 20      | 3        | ❌ CGPA invalid            |
+| TC5       | 20  | 11   | 20      | 3        | ❌ CGPA invalid            |
+| TC6       | 20  | 8.5  | 10      | 3        | ❌ Credits invalid         |
+| TC7       | 20  | 8.5  | 35      | 3        | ❌ Credits invalid         |
+| TC8       | 20  | 8.5  | 20      | 0        | ❌ Semester invalid        |
+| TC9       | 20  | 8.5  | 20      | 9        | ❌ Semester invalid        |
+
+👉 Important:
+
+* TC1 = All valid (Happy path)
+* Rest = One input invalid at a time (best practice)
+
+---
+
+# ✅ (c) ECP vs Boundary Value Testing
+
+### 🔹 Equivalence Class Partitioning (ECP)
+
+* Input ko groups/classes mein divide karta hai
+* Har class se ek test case lete hain
+* Focus: **general behavior**
+
+👉 Example:
+
+* Age valid class = 18–60 → ek value test karna enough
+
+---
+
+### 🔹 Boundary Value Testing (BVA)
+
+* Sirf edge values test karta hai
+* Focus: **limits pe error pakadna**
+
+👉 Example (Age):
+
+* 17 ❌
+* 18 ✅
+* 60 ✅
+* 61 ❌
+
+---
+
+### 🔥 Simple Comparison Table
+
+| Feature         | ECP              | BVA                |
+| --------------- | ---------------- | ------------------ |
+| Focus           | Classes (groups) | Boundaries (edges) |
+| Test Cases      | Kam              | Thode zyada        |
+| Error Detection | General          | Edge cases         |
+| Example         | Age 25           | Age 17,18,60,61    |
+
+---
+
+# 🧠 Final Simple Line (Exam ke liye)
+
+👉 ECP inputs ko groups mein divide karta hai, jabki BVA sirf boundary values test karta hai jahan error hone ke chances sabse zyada hote hain.
+
+---
+
+Agar tu chahe toh main iska **boundary value test cases bhi bana deta hoon same question pe** 👍
