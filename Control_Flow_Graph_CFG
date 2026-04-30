@@ -1,0 +1,130 @@
+Chalo isko **bahut simple Hinglish + exam style** mein karte hain 👇
+
+---
+
+# ✅ Given Program Logic (short mein)
+
+* Number input
+* Agar negative hai → positive banaya
+* Loop se digits ka sum nikala
+
+---
+
+# ✅ (a) Control Flow Graph (CFG)
+
+### 🔹 Nodes banate hain (step-wise)
+
+1. Start
+2. Input num
+3. Check (num < 0 ?)
+4. num = -num
+5. while (num > 0 ?)
+6. digit = num % 10
+7. sum = sum + digit
+8. num = num / 10
+9. Print sum
+10. End
+
+---
+
+### 🔹 CFG (text diagram)
+
+```
+(1) Start
+   ↓
+(2) Input num
+   ↓
+(3) num < 0 ?
+   ↓Yes        ↓No
+(4) num=-num    |
+      ↓         |
+        --------
+             ↓
+        (5) num > 0 ?
+         ↓Yes        ↓No
+        (6) digit = num % 10
+         ↓
+        (7) sum = sum + digit
+         ↓
+        (8) num = num / 10
+         ↓
+        ─────── back to (5)
+             ↓
+           (9) Print
+             ↓
+           (10) End
+```
+
+---
+
+# ✅ (b) Cyclomatic Complexity
+
+### 🔹 Formula 1:
+
+**V(G) = No. of decision nodes + 1**
+
+Decision nodes:
+
+* (3) if condition
+* (5) while loop
+
+👉 Total = 2
+
+👉 **Cyclomatic Complexity = 2 + 1 = 3**
+
+---
+
+### 🔹 Formula 2 (optional):
+
+**V(G) = E - N + 2**
+
+But exam mein mostly first formula use hota hai 👍
+
+---
+
+# ✅ (c) Independent Paths
+
+Cyclomatic complexity = 3
+👉 So **3 independent paths honge**
+
+---
+
+### 🔹 Path 1 (No negative, loop skip)
+
+```
+1 → 2 → 3(No) → 5(No) → 9 → 10
+```
+
+👉 Case: num = 0
+
+---
+
+### 🔹 Path 2 (Negative number, loop executes)
+
+```
+1 → 2 → 3(Yes) → 4 → 5(Yes) → 6 → 7 → 8 → 5(No) → 9 → 10
+```
+
+👉 Case: num = -123
+
+---
+
+### 🔹 Path 3 (Positive number, loop executes)
+
+```
+1 → 2 → 3(No) → 5(Yes) → 6 → 7 → 8 → 5(No) → 9 → 10
+```
+
+👉 Case: num = 123
+
+---
+
+# 🧠 Final Short Answer (Exam Ready)
+
+* CFG mein 2 decision nodes hain → if & while
+* Cyclomatic Complexity = **3**
+* Independent paths = **3 paths**
+
+---
+
+Agar tu chahe toh main iska **graph proper box-arrow diagram style mein bhi bana deta hoon (image type)** 👍
