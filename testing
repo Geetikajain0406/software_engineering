@@ -1,0 +1,75 @@
+## Q2. Age Group Categorizer
+
+### Given Conditions
+
+* Invalid Age → age < 0 or age > 120
+* Child → 0 ≤ age < 13
+* Teen → 13 ≤ age < 20
+* Adult → 20 ≤ age < 60
+* Senior → 60 ≤ age ≤ 120
+
+---
+
+# 1. Boundary Value Test Cases (BVA)
+
+Boundary Value Analysis me hum ranges ke edges check karte hain.
+Har boundary ke:
+
+* just below
+* at boundary
+* just above
+  test karte hain.
+
+### Important Boundaries:
+
+0, 13, 20, 60, 120
+
+| Test Case | Input Age | Expected Output |
+| --------- | --------- | --------------- |
+| 1         | -1        | Invalid Age     |
+| 2         | 0         | Child           |
+| 3         | 1         | Child           |
+| 4         | 12        | Child           |
+| 5         | 13        | Teen            |
+| 6         | 14        | Teen            |
+| 7         | 19        | Teen            |
+| 8         | 20        | Adult           |
+| 9         | 21        | Adult           |
+| 10        | 59        | Adult           |
+| 11        | 60        | Senior          |
+| 12        | 61        | Senior          |
+| 13        | 119       | Senior          |
+| 14        | 120       | Senior          |
+| 15        | 121       | Invalid Age     |
+
+---
+
+# 2. Equivalence Class Test Cases (ECT)
+
+ECT me har category se ek representative value lete hain.
+
+## Valid Equivalence Classes
+
+* Child: 0–12
+* Teen: 13–19
+* Adult: 20–59
+* Senior: 60–120
+
+## Invalid Equivalence Classes
+
+* age < 0
+* age > 120
+
+| Equivalence Class | Sample Input | Expected Output |
+| ----------------- | ------------ | --------------- |
+| age < 0           | -5           | Invalid Age     |
+| 0–12              | 8            | Child           |
+| 13–19             | 16           | Teen            |
+| 20–59             | 35           | Adult           |
+| 60–120            | 75           | Senior          |
+| age > 120         | 130          | Invalid Age     |
+
+Difference yaad rakh:
+
+* **BVA** → boundaries ke aas paas values
+* **ECT** → har class/range se ek normal value only.
