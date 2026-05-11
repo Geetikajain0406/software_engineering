@@ -1,0 +1,622 @@
+Chal ek **complete White Box Testing ka question** lete hain aur usme saare parts karte hain step-by-step:
+
+* Flow Graph
+* DD Path Graph
+* Define/Use status of variables
+* DU Paths
+* DC Paths
+* DU paths jo DC path nahi hain
+
+Ek hi example pe sab samjhenge.
+
+---
+
+# Example Program
+
+```c
+1. input A, B
+2. if (A > 0)
+3.     C = A + B;
+4. else
+5.     C = A - B;
+
+6. if (C > 10)
+7.     D = C * 2;
+8. else
+9.     D = C + 5;
+
+10. print D;
+```
+
+---
+
+# STEP 1 — Flow Graph Banana
+
+Flow graph me:
+
+* Statements = nodes
+* Control flow = arrows
+
+---
+
+## Nodes
+
+| Node | Statement |
+| ---- | --------- |
+| 1    | input A,B |
+| 2    | if(A>0)   |
+| 3    | C=A+B     |
+| 4    | C=A-B     |
+| 5    | if(C>10)  |
+| 6    | D=C*2     |
+| 7    | D=C+5     |
+| 8    | print D   |
+
+---
+
+# Flow Graph
+
+```text
+        [1]
+          |
+        [2]
+       /   \
+     T/     \F
+     /       \
+   [3]       [4]
+      \     /
+       \   /
+        [5]
+       /   \
+     T/     \F
+     /       \
+   [6]       [7]
+      \     /
+       \   /
+        [8]
+```
+
+---
+
+# STEP 2 — Paths Find Karna
+
+Program execution ke possible paths:
+
+---
+
+## Path 1
+
+```text
+1 → 2 → 3 → 5 → 6 → 8
+```
+
+Condition:
+
+* A>0
+* C>10
+
+---
+
+## Path 2
+
+```text
+1 → 2 → 3 → 5 → 7 → 8
+```
+
+Condition:
+
+* A>0
+* C≤10
+
+---
+
+## Path 3
+
+```text
+1 → 2 → 4 → 5 → 6 → 8
+```
+
+Condition:
+
+* A≤0
+* C>10
+
+---
+
+## Path 4
+
+```text
+1 → 2 → 4 → 5 → 7 → 8
+```
+
+Condition:
+
+* A≤0
+* C≤10
+
+---
+
+# STEP 3 — DD Path Graph
+
+DD = Decision-to-Decision
+
+DD path graph me:
+
+* Sequential statements combine ho jate hain
+* Sirf decision points important hote hain
+
+---
+
+## Decision Nodes
+
+* Node 2 → if(A>0)
+* Node 5 → if(C>10)
+
+---
+
+## DD Paths
+
+```text
+Start → 2 → 5 → End
+```
+
+Branches:
+
+```text
+2(T) → 5
+2(F) → 5
+
+5(T) → End
+5(F) → End
+```
+
+---
+
+# STEP 4 — Define and Use Status of Variables
+
+Ab har variable kaha DEFINE aur kaha USE ho rha hai woh dekhte hain.
+
+---
+
+# Variable A
+
+---
+
+## Define
+
+| Node | Action  |
+| ---- | ------- |
+| 1    | input A |
+
+Matlab value assign hui.
+
+---
+
+## Use
+
+| Node | Action  |
+| ---- | ------- |
+| 2    | if(A>0) |
+| 3    | C=A+B   |
+| 4    | C=A-B   |
+
+---
+
+# Variable B
+
+---
+
+## Define
+
+| Node | Action  |
+| ---- | ------- |
+| 1    | input B |
+
+---
+
+## Use
+
+| Node | Action |
+| ---- | ------ |
+| 3    | C=A+B  |
+| 4    | C=A-B  |
+
+---
+
+# Variable C
+
+---
+
+## Define
+
+| Node | Action |
+| ---- | ------ |
+| 3    | C=A+B  |
+| 4    | C=A-B  |
+
+---
+
+## Use
+
+| Node | Action   |
+| ---- | -------- |
+| 5    | if(C>10) |
+| 6    | D=C*2    |
+| 7    | D=C+5    |
+
+---
+
+# Variable D
+
+---
+
+## Define
+
+| Node | Action |
+| ---- | ------ |
+| 6    | D=C*2  |
+| 7    | D=C+5  |
+
+---
+
+## Use
+
+| Node | Action  |
+| ---- | ------- |
+| 8    | print D |
+
+---
+
+# STEP 5 — DU Paths Find Karna
+
+DU = Define Use Path
+
+Rule:
+
+```text
+Definition → Use
+without redefining variable
+```
+
+---
+
+# DU Paths for A
+
+A defined at node 1.
+
+Uses:
+
+* node 2
+* node 3
+* node 4
+
+---
+
+## DU Paths
+
+### 1 → 2
+
+```text
+1 → 2
+```
+
+---
+
+### 1 → 2 → 3
+
+```text
+1 → 2 → 3
+```
+
+---
+
+### 1 → 2 → 4
+
+```text
+1 → 2 → 4
+```
+
+---
+
+# DU Paths for B
+
+Defined at node 1.
+
+Uses:
+
+* 3
+* 4
+
+---
+
+## Paths
+
+```text
+1 → 2 → 3
+```
+
+```text
+1 → 2 → 4
+```
+
+---
+
+# DU Paths for C
+
+C defined at:
+
+* 3
+* 4
+
+Used at:
+
+* 5
+* 6
+* 7
+
+---
+
+## From Node 3
+
+### 3 → 5
+
+```text
+3 → 5
+```
+
+### 3 → 5 → 6
+
+```text
+3 → 5 → 6
+```
+
+### 3 → 5 → 7
+
+```text
+3 → 5 → 7
+```
+
+---
+
+## From Node 4
+
+### 4 → 5
+
+```text
+4 → 5
+```
+
+### 4 → 5 → 6
+
+```text
+4 → 5 → 6
+```
+
+### 4 → 5 → 7
+
+```text
+4 → 5 → 7
+```
+
+---
+
+# DU Paths for D
+
+D defined at:
+
+* 6
+* 7
+
+Used at:
+
+* 8
+
+---
+
+## Paths
+
+```text
+6 → 8
+```
+
+```text
+7 → 8
+```
+
+---
+
+# STEP 6 — DC Paths
+
+DC = Definition Clear
+
+Matlab:
+Path me variable redefine nahi hona chahiye.
+
+Example:
+
+```text
+3 → 5 → 6
+```
+
+C redefine nahi hua.
+So this is DC path.
+
+---
+
+# Important Point
+
+Almost saare DU paths yaha DC bhi hain because:
+
+* Beech me variable dubara define nahi ho raha.
+
+---
+
+# STEP 7 — DU Paths that are NOT DC Paths
+
+Ab samjho important concept.
+
+Agar variable redefine ho jaye between definition and use,
+toh DU path DC nahi hota.
+
+---
+
+## Example Samjho
+
+Agar code hota:
+
+```c
+1. A=5
+2. B=A+1
+3. A=10
+4. C=A+2
+```
+
+---
+
+## DU Path
+
+From definition at 1 to use at 4:
+
+```text
+1 → 2 → 3 → 4
+```
+
+BUT:
+
+Node 3 pe A redefine ho gaya.
+
+So:
+
+❌ Not Definition Clear
+
+---
+
+# Is Question Me?
+
+Is wale example me:
+
+✅ All DU paths are DC paths.
+
+So:
+
+```text
+No DU path violates DC condition.
+```
+
+---
+
+# FINAL EXAM STYLE SUMMARY
+
+---
+
+# 1. Flow Graph
+
+Nodes + branches showing control flow.
+
+---
+
+# 2. DD Path Graph
+
+Decision-to-decision compressed graph.
+
+---
+
+# 3. Define
+
+Variable gets value assigned.
+
+Examples:
+
+* input
+* assignment
+
+---
+
+# 4. Use
+
+Variable used in:
+
+* conditions
+* expressions
+* print statements
+
+---
+
+# 5. DU Path
+
+Definition → Use path
+without another definition in between.
+
+---
+
+# 6. DC Path
+
+Definition-clear path:
+variable not redefined.
+
+---
+
+# 7. DU Path not DC Path
+
+When variable redefined before use.
+
+---
+
+# Shortcut Trick for Exams
+
+---
+
+## DEFINE
+
+Check:
+
+```text
+=
+input
+read
+scanf
+```
+
+---
+
+## USE
+
+Check:
+
+```text
+if()
+print()
+expressions
+calculations
+```
+
+---
+
+## DU PATH
+
+```text
+Define → Use
+```
+
+---
+
+## DC PATH
+
+Between define and use:
+
+```text
+NO redefine
+```
+
+---
+
+Agar chahiye toh mai:
+
+* ek aur tougher numerical
+* loops wala example
+* while loop ka flow graph
+* basis path testing
+* cyclomatic complexity
+* data flow testing
+
+bhi isi style me kara deta hu.
