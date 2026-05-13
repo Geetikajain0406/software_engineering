@@ -1,0 +1,75 @@
+### **A. Appropriate COCOMO Mode**
+
+This is an **Embedded Mode** project.
+
+**Justification:**
+
+* The system is **real-time**
+* It has **strict performance and reliability requirements**
+* It **interacts closely with hardware**
+* Such systems are complex and tightly constrained
+
+👉 In COCOMO, these characteristics clearly fall under **Embedded mode**, where both hardware constraints and tight software requirements exist.
+
+---
+
+### **B. Effort Adjustment Factor (EAF)**
+
+EAF is calculated by multiplying all cost driver multipliers.
+
+---
+
+#### **Team A**
+
+* PCAP (High) = 0.86
+* AEXP (Low) = 1.13
+
+[
+EAF_A = 0.86 \times 1.13 = 0.9718 \approx \mathbf{0.97}
+]
+
+---
+
+#### **Team B**
+
+* PCAP (Low) = 1.17
+* AEXP (High) = 0.91
+
+[
+EAF_B = 1.17 \times 0.91 = 1.0647 \approx \mathbf{1.06}
+]
+
+---
+
+### **C. Which Team is More Suitable?**
+
+#### **Comparison:**
+
+* **Team A EAF = 0.97 (lower effort required)**
+* **Team B EAF = 1.06 (higher effort required)**
+
+#### **Interpretation:**
+
+* Lower EAF ⇒ **less effort, better productivity impact**
+
+* Team A has:
+
+  * High programming capability ✔️
+  * Slight lack of domain experience ❌
+
+* Team B has:
+
+  * Good domain experience ✔️
+  * Weak programming capability ❌ (critical risk in embedded systems)
+
+---
+
+### ✅ **Final Decision: Team A is more suitable**
+
+**Reason:**
+
+* Embedded real-time systems depend heavily on **strong programming and technical capability**
+* Even though Team A lacks domain experience, it can be compensated over time
+* But **low programming capability (Team B)** is a major risk for system reliability and performance
+
+👉 Therefore, **Team A is the better choice for this project**.
