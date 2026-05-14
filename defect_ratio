@@ -1,0 +1,37 @@
+Yeh table software engineering me **Defect Repair Ratio** dikhata hai.
+Iska matlab hai ki agar software me bug/error jaldi pakda jaye toh usko fix karna sasta hota hai, aur late pakda jaye toh bahut mehenga padta hai.
+
+Table ka meaning:
+
+| Phase          | Ratio | Meaning                                                                     |
+| -------------- | ----- | --------------------------------------------------------------------------- |
+| Analysis       | 1     | Agar requirement phase me bug mil gaya toh cost sabse kam                   |
+| Design         | 10    | Design phase me same bug fix karne ki cost 10 times ho jati hai             |
+| Implementation | 100   | Coding/testing ke baad bug mile toh fix karna 100 times costly ho sakta hai |
+
+Example:
+
+Maan lo requirement me mistake thi:
+
+* Analysis phase me fix cost = ₹100
+* Design phase me wahi fix = ₹1000
+* Implementation phase me wahi fix = ₹10000
+
+Reason:
+Kyuki baad me fix karne par:
+
+* code change karna padta hai
+* testing dobara hoti hai
+* documentation update hoti hai
+* kabhi pura module bhi rewrite karna padta hai
+
+Simple line me:
+
+> “Earlier the defect is found, cheaper it is to fix.”
+
+Isliye software development me:
+
+* proper analysis
+* requirement checking
+* early testing
+  bahut important hote hain.
